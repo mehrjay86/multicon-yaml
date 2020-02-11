@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multicon
+spec:
+   selector:
+   containers:
+      - name:  ngnx   
+        image: nginx:alpine
+        ports:
+          - containerPort: 8080
+            protocol:   TCP
+      - name:  mycv
+        image: mehrjay86/mycv
+        ports: 
+         - containerPort: 8081
+           protocol: TCP
